@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Room and Guest</title>
+    <link rel="stylesheet" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css">
+</head>
+<body>
+<h1>Select Room and Guest</h1>
+<form method="post" th:action="@{/reservation}">
+    <label for="room">Select Room:</label>
+    <select id="room" name="room">
+        <option th:each="room : ${rooms}" th:value="${room.id}" th:text="${room.name}"></option>
+    </select>
+
+    <label for="guest">Select Guest:</label>
+    <select id="guest" name="guest">
+        <option th:each="guest : ${guests}" th:value="${guest.id}" th:text="${guest.firstName}"></option>
+    </select>
+
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" name="res_date">
+
+    <button type="submit">Submit</button>
+</form>
+
+<script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

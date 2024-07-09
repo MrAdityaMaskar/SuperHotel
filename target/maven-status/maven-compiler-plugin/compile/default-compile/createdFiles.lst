@@ -1,0 +1,17 @@
+com\lighttoinfinity\indiahotel\web\exception\NotFoundException.class
+com\lighttoinfinity\indiahotel\service\model\RoomReservation.class
+com\lighttoinfinity\indiahotel\data\repository\ReservationRepository.class
+com\lighttoinfinity\indiahotel\data\repository\RoomRepository.class
+com\lighttoinfinity\indiahotel\service\RoomReservationService.class
+com\lighttoinfinity\indiahotel\data\entity\Reservation.class
+com\lighttoinfinity\indiahotel\web\exception\BadRequestException.class
+com\lighttoinfinity\indiahotel\web\controller\RoomController.class
+com\lighttoinfinity\indiahotel\web\controller\WelcomeController.class
+com\lighttoinfinity\indiahotel\data\repository\GuestRepository.class
+com\lighttoinfinity\indiahotel\web\api\GuestApiController.class
+com\lighttoinfinity\indiahotel\data\entity\Guest.class
+com\lighttoinfinity\indiahotel\data\entity\Room.class
+com\lighttoinfinity\indiahotel\web\controller\OccupancyController.class
+com\lighttoinfinity\indiahotel\IndiaHotelApplication.class
+com\lighttoinfinity\indiahotel\web\api\ReservationApiController.class
+com\lighttoinfinity\indiahotel\web\api\RoomApiController.class
