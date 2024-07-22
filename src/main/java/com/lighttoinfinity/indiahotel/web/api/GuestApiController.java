@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/guests")
+@RequestMapping("/api/v1/guests")
 public class GuestApiController {
     private final GuestRepository guestRepository;
 

@@ -14,21 +14,21 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
     private final AuthService authService;
 
 
-    @PostMapping("/auth/login")
+    @PostMapping("/login")
     public LoginResponse login(@RequestBody @Validated LoginRequest request){
         return authService.attemptLogin(request.getUsername(), request.getPassword());
-
-        //
     }
 }
