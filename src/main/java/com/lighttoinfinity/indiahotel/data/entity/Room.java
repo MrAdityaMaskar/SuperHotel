@@ -1,13 +1,10 @@
 package com.lighttoinfinity.indiahotel.data.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+
+import java.util.List;
 
 
 @Entity
@@ -31,11 +28,15 @@ public class Room{
     @Column(name = "bed_info")
     private String bedInfo;
 
-    public Room( String name, String roomNumber, String bedInfo) {
+    @ElementCollection
+    private List<String> imageUrls;
+
+    public Room( String name, String roomNumber, String bedInfo, List<String> imageUrls) {
 
         this.name = name;
         this.roomNumber = roomNumber;
         this.bedInfo = bedInfo;
+        this.imageUrls = imageUrls;
     }
     public Room(){
         super();
@@ -62,6 +63,8 @@ public class Room{
         return roomNumber;
     }
 
+
+
     public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
@@ -72,5 +75,13 @@ public class Room{
 
     public void setBedInfo(String bedInfo) {
         this.bedInfo = bedInfo;
+    }
+
+    public List<String> getImageUrls() {
+        return imageUrls;
+    }
+
+    public void setImageUrls(List<String> imageUrls) {
+        this.imageUrls = imageUrls;
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -39,10 +40,10 @@ public class RoomController {
     //Post Rooms.
 
     @PostMapping("/add-room")
-    public String addRooom(@RequestParam("name") String name, @RequestParam("room_number") String roomNumber, @RequestParam("bed_info") String bedInfo, Model model){
+    public String addRooom(@RequestParam("name") String name, @RequestParam("room_number") String roomNumber, @RequestParam("bed_info") String bedInfo, @RequestParam("images") List<String> imageUrls, Model model){
         System.out.println(name + " " + roomNumber + " " + bedInfo );
 
-        Room room = new Room(name, roomNumber, bedInfo);
+        Room room = new Room(name, roomNumber, bedInfo, imageUrls);
         this.roomRepository.save(room);
 
         model.addAttribute("message", "Room with name '"+ name + "' Added Successfully!!");
